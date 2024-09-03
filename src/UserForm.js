@@ -4,7 +4,9 @@ const UserForm = props => {
                 container
                 spacing={2}
                 sx={{
-                    
+                    backgroundColor: '#ffffff',
+                    marginBottom: '30px',
+                    display: 'block',
 
                 }}
             >
