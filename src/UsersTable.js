@@ -1,6 +1,6 @@
 import { Paper, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 
-const UsersTable = props => {
+const UsersTable = ({rows}) => {
     <TableContainer component={Paper}>
         <Table>
             <TableHead>
@@ -11,7 +11,13 @@ const UsersTable = props => {
                 </TableRow>
             </TableHead>
             <TableBody>
-                
+                {
+                rows.map(row => (
+                    <TableRow key={row.id} sx={{'&:last-child td, &:last-child th' :{border:0}}}>
+                        <TableCell component='th' scope='row'>{row.id}</TableCell>
+                    </TableRow>
+                    ))
+                }
             </TableBody>
         </Table>
     </TableContainer>

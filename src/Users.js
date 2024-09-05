@@ -17,7 +17,7 @@ const Users = () => {
     return (
         <Box>
             <UserForm/>
-            <UsersTable/>
+            <UsersTable rows={users}/>
         </Box>
         
         
