@@ -1,8 +1,11 @@
-import { Button, Grid, Input, Typography, TextField } from '@mui/material'
+import { Button, Input, Typography, TextField, Grid2 } from '@mui/material'
+import { useState } from 'react';
 
 const UserForm = props => {
+    const [id, setId] = useState(0);
+    const [name, setName] = useState('');
     return (
-        <Grid
+        <Grid2
             container
             spacing={2}
             sx={{
@@ -11,11 +14,11 @@ const UserForm = props => {
                 display: 'block',
             }}
         >
-            <Grid item xs={12} sm={6} sx={{ display: 'flex' }}>
+            <Grid2 item xs={12} sm={6} sx={{ display: 'flex' }}>
                 <Typography component={'h1'} sx={{ color: '#000000' }}>User Form</Typography>
-            </Grid>
+            </Grid2>
             
-            <Grid item xs={12} sm={6}>
+            <Grid2 item xs={12} sm={6}>
                 <Typography 
                     component={'label'} 
                     htmlFor='id' 
@@ -28,13 +31,13 @@ const UserForm = props => {
                     id="id"
                     name="id"
                     sx={{ width: '400px' }}
-                    value={''}
-                    onChange={e => {}}
+                    value={id}
+                    onChange={e => setId(e.target.value)}
                     variant="outlined" // Using Material-UI TextField for consistent styling
                 />
-            </Grid>
+            </Grid2>
 
-            <Grid item xs={12} sm={6}>
+            <Grid2 item xs={12} sm={6}>
                 <Typography 
                     component={'label'} 
                     htmlFor='name' 
@@ -47,11 +50,11 @@ const UserForm = props => {
                     id="name"
                     name="name"
                     sx={{ width: '400px' }}
-                    value={''}
-                    onChange={e => {}}
+                    value={name}
+                    onChange={e => setName(e.target.value)}
                     variant="outlined" // Using Material-UI TextField for consistent styling
                 />
-            </Grid>
+            </Grid2>
 
             <Button
                 sx={{
@@ -69,7 +72,7 @@ const UserForm = props => {
             >
                 Submit
             </Button>
-        </Grid>
+        </Grid2>
     );
 }
 
